@@ -71,6 +71,48 @@
         </a>
       </li>
     </ul>
+    <h2>Email Signature Example</h2>
+<p>You can copy and paste this signature into your email client:</p>
+
+<div class="signature-wrapper">
+  <button class="copy-btn" onclick="copySignature()">📋 Copy Signature</button>
+
+  <div id="signature" class="signature-box">
+    <img src="../logo/logo.jpg" alt="UE Line INC Logo" style="width: 180px; margin-bottom: 10px;">
+    
+    <p style="margin: 0; font-weight: bold; font-size: 16px;">YOUR NAME | YOUR POSITION</p>
+    <br>
+    <p style="margin: 0;">📞 <strong>Direct:</strong> YOUR PHONE</p>
+    <p style="margin: 0;">📞 <strong>Office:</strong> 773-657-5354 ext.2013</p>
+    <p style="margin: 0;">📧 <strong>Email:</strong> <a href="#">YOUR EMAIL</a></p>
+    <p style="margin: 0;">🌐 <strong>Website:</strong> <a href="https://www.uelineinc.com" target="_blank">uelineinc.com</a></p>
+    <p style="margin: 0;">📍 <strong>Corporate Office:</strong> 707 Davis Rd #203A, Elgin, IL 60123</p>
   </div>
+</div>
+
+  </div>
+  <script>
+  function copySignature() {
+    const signatureElement = document.getElementById("signature");
+    const range = document.createRange();
+    range.selectNode(signatureElement);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+
+    try {
+      const successful = document.execCommand('copy');
+      if (successful) {
+        alert("Signature copied to clipboard!");
+      } else {
+        alert("Failed to copy. Try manually.");
+      }
+    } catch (err) {
+      alert("Browser doesn't support copying.");
+    }
+
+    window.getSelection().removeAllRanges();
+  }
+</script>
+
 </body>
 </html>
