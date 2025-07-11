@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COI</title>
+
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+ <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+        <a href="../employees/kevin-j39PLas7.html">Back to Access</a>
+        <a href="hints.html">Back to Hints</a>
+      </nav>
+
+
+<div class="container">
+
+     <img src="../logo/logo.jpg" alt="UE Line INC Logo" class="logo" />
+
+    <h2>Please review the process for COI request</h2>
+
+    <img src="../logo/coi.jpg" alt="COI sample" style="max-width: 100%; margin: 20px 0; border-radius: 8px;">
+
+
+   <ol>
+  <li><a href="mailto:IL-truckrequest@usi.com">Commercial General Liability</a></li>
+  <li><a href="mailto:insurance@polarisinsgroup.com">Automobile Liability</a></li>
+  <li><a href="mailto:bgalloway@acrisure.com">Cargo Insurance</a></li>
+</ol>
+
+
+<h3>COI Request Template</h3>
+<p>You can copy and paste this template into your email:</p>
+
+<div class="copy-wrapper">
+  <button class="copy-btn" onclick="copyCOITemplate()">📋 Copy Template</button>
+
+  <pre id="coi-template" class="signature-box">
+Dear Insurance Team,
+
+Please issue [Broker Name] as COI holders:
+
+Broker's Company Name  
+Broker's Company Address  
+City, State, Zip Code
+
+Please email a copy to me and [Broker Email]
+  </pre>
+</div>
+
+</div>
+    <script>
+  function copyCOITemplate() {
+    const template = document.getElementById("coi-template");
+    const range = document.createRange();
+    range.selectNode(template);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+
+    try {
+      const success = document.execCommand("copy");
+      if (success) {
+        alert("Template copied to clipboard!");
+      } else {
+        alert("Failed to copy. Please try manually.");
+      }
+    } catch (err) {
+      alert("Copying not supported by your browser.");
+    }
+
+    window.getSelection().removeAllRanges();
+  }
+</script>
+
+</body>
+</html>
